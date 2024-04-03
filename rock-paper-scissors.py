@@ -6,8 +6,8 @@ import random
 
 
 print("ROCK PAPER SCISSORS vs PC")
+print("Rules: \n TYPE rock, paper or scissors to play, but first")
 name = input("What's your name? ")
-#print("Rules: \n'1' for rock\n'2' for paper\n'3' for scissors")
 rules = {
     'rock': 1,
     'paper': 2,
@@ -17,7 +17,10 @@ rules = {
 
 n = int(input("How many games would you like to play? ")) 
 
+print(f"Okay {name} let's play!")
+
 for i in range(n):
+    print(f"Game {i+1}")
     user = input(f"{name} : ")
     pc = random.choice(['rock','paper','scissors'])
     print(f'PC : {pc}')
@@ -35,6 +38,7 @@ for i in range(n):
         print("PC WINS")
     else:
         print("Please type one of 'rock', 'paper', 'Scissors'")
+    
         
 
 
