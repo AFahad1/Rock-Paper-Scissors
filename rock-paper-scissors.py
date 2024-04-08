@@ -1,26 +1,26 @@
-# The goal is to create a game of rock paper scissors.
-# the aim is to get to learn github
-# Step 1: create an MVP
+# The goal is to create a game of rock paper scissors and in the process learn git & github
 
 import random
 
 
 print("ROCK PAPER SCISSORS vs PC")
-print("Rules: \nTYPE rock, paper or scissors to play, but first")
 name = input("What's your name? ")
-rules = {
-    'rock': 1,
-    'paper': 2,
-    'scissors': 3
-}
+n = int(input("How many rounds would you like to play? ")) 
 
+print("Rule: Type 'rock', 'paper' or 'scissors' to play")
 
-n = int(input("How many games would you like to play? ")) 
 
 print(f"Okay {name} let's play! \n***************************")
 
 games = 0
 score = []
+
+# Each input is assigned a number to make it easier to detect the winner
+rules = {
+    'rock': 1,
+    'paper': 2,
+    'scissors': 3
+}
 
 while games < n:
 
