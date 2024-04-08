@@ -6,7 +6,7 @@ import random
 
 
 print("ROCK PAPER SCISSORS vs PC")
-print("Rules: \n TYPE rock, paper or scissors to play, but first")
+print("Rules: \nTYPE rock, paper or scissors to play, but first")
 name = input("What's your name? ")
 rules = {
     'rock': 1,
@@ -17,16 +17,23 @@ rules = {
 
 n = int(input("How many games would you like to play? ")) 
 
-print(f"Okay {name} let's play!")
+print(f"Okay {name} let's play! \n***************************")
 
-for i in range(n):
-    print(f"Game {i+1}")
+games = 0
+score = []
+
+while games < n:
+
+    print(f"Game {games+1}")
     user = input(f"{name} : ")
+    user = rules.get(user, -10)    # User assigned -10 if input is invalid
     pc = random.choice(['rock','paper','scissors'])
     print(f'PC : {pc}')
-    user = rules.get(user, -10)
     pc = rules[pc]
-    if user == pc:
+    if user == -10:
+        print("Please type one of 'rock', 'paper', 'scissors'")
+        continue
+    elif user == pc:
         print("tie...again!")
     elif (user - pc) == -1:
         print("PC WINS")
@@ -36,8 +43,11 @@ for i in range(n):
         print(f"{name} WINS!")
     elif (user - pc) == 2:
         print("PC WINS")
-    else:
-        print("Please type one of 'rock', 'paper', 'Scissors'")
+    
+    games += 1
+    
+        
+
     
         
 
